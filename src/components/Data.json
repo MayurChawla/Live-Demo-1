@@ -1,6 +1,4 @@
-
-{
-    "products" : [
+[
         {
         "id" : 1,
         "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
@@ -60,5 +58,5 @@
         "sizes" : ["S","M","L"],
         "ideal" : ["Men", "Women"],
         "rating" : 3
-    }]
-}
+    }
+]

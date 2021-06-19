@@ -1,31 +1,32 @@
 import React from 'react';
-import ProductContainer from './ProductContainer';
+//import ProductContainer from './ProductContainer';
+import PostData from "./Data.json";
 
 const ContainerList = () => {
 
-    const [getData, setData] = useEffect();
-    
-    const getData = async () => {
-        await fetch("/Data.json")
-          .then((res) => res.json())
-          .then((data) => {
-            setData(data);
-          });
-      };
-    
-      React.useEffect(() => {
-        getData();
-      }, []);
-    
-    return (
-       
+       return (
         <div className="product-container">
-            {ProductData.map((product)=>(
-                <ProductContainer key={product.id} {...product}/>
-            ))}
+          console.log(PostData);
+          {PostData.map((productDetails, index) => {
+            return <div key={index}>
+                <div className="product">
+                <img src="" alt = "imageloading"/>
+                <div className="product-info">
+                  <h3>"brand"</h3>
+                  <span className="{tag {setVoteClass(vote_average)}}">"rating"</span>
+                </div>
+                <div className="product-overview">
+                  <h2>Description : {}</h2>
+                    <p>"price"</p>
+                    <p>"sizes"</p>
+                    <p>"ideal"</p>
+                </div>
+            </div></div>
+          })
+          }
         </div>
-
-    )
+       );
+        
 }
 
 export default ContainerList;
