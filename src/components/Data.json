@@ -1,0 +1,64 @@
+
+{
+    "products" : [
+        {
+        "id" : 1,
+        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "brand" : "A Company",
+        "description" : "Solod Men Raincoat",
+        "price" : 100,
+        "sizes" : ["S","M","L"],
+        "ideal" : ["Men", "Women"],
+        "rating" : 3
+    },
+    {
+        "id" : 2,
+        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "brand" : "B Company",
+        "description" : "Solod Men Raincoat",
+        "price" : 100,
+        "sizes" : ["S","M","L"],
+        "ideal" : ["Men", "Women"],
+        "rating" : 3
+    },
+    {
+        "id" : 3,
+        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "brand" : "C Company",
+        "description" : "Solod Men Raincoat",
+        "price" : 100,
+        "sizes" : ["S","M","L"],
+        "ideal" : ["Men", "Women"],
+        "rating" : 3
+    },
+    {
+        "id" : 4,
+        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "brand" : "D Company",
+        "description" : "Solod Men Raincoat",
+        "price" : 100,
+        "sizes" : ["S","M","L"],
+        "ideal" : ["Men", "Women"],
+        "rating" : 3
+    },
+    {
+        "id" : 5,
+        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "brand" : "E Company",
+        "description" : "Solod Men Raincoat",
+        "price" : 100,
+        "sizes" : ["S","M","L"],
+        "ideal" : ["Men", "Women"],
+        "rating" : 3
+    },
+    {
+        "id" : 6,
+        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "brand" : "F Company",
+        "description" : "Solod Men Raincoat",
+        "price" : 100,
+        "sizes" : ["S","M","L"],
+        "ideal" : ["Men", "Women"],
+        "rating" : 3
+    }]
+}
