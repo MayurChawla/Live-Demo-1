@@ -1,29 +1,41 @@
 import React from 'react';
-//import ProductContainer from './ProductContainer';
-import PostData from "./Data.json";
 
 const ContainerList = () => {
 
-       return (
-        <div className="product-container">
-          console.log(PostData);
-          {PostData.map((productDetails, index) => {
-            return <div key={index}>
-                <div className="product">
-                <img src="" alt = "imageloading"/>
-                <div className="product-info">
-                  <h3>"brand"</h3>
-                  <span className="{tag {setVoteClass(vote_average)}}">"rating"</span>
-                </div>
-                <div className="product-overview">
-                  <h2>Description : {}</h2>
-                    <p>"price"</p>
-                    <p>"sizes"</p>
-                    <p>"ideal"</p>
-                </div>
-            </div></div>
-          })
-          }
+  const [Data, setData] = React.useState(null)
+
+  const getData = async () => {
+    await fetch("Data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  };
+
+  React.useEffect(() => {
+    getData();
+  }, []);
+
+  return (
+    <div className="product-container">
+    {
+      Data?.map((item) => (
+      <div className="product" key={item.id}>
+        <img src={item.img} alt = "imageloading"/>
+        <div className="product-info">
+          <h3>{item.brand}</h3>
+          <span className="{tag {setVoteClass(vote_average)}}">{item.rating}</span>
+        </div>
+        <div className="product-overview">
+          <h2>{item.description}</h2>
+          <p>Price : {item.price}</p>
+          <p>Sizes :{item.sizes}</p>
+          <p>For : {item.ideal}</p>
+        </div>
+      </div>
+      ))}
+
+          
         </div>
        );
         

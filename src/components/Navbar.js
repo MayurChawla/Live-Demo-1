@@ -3,7 +3,7 @@ import React from 'react';
 function Navbar() {
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        console.log("searched something");        
+        console.log("searched something");
       };
     return(
         <div className="navdiv">

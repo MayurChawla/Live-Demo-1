@@ -1,7 +1,7 @@
 [
         {
         "id" : 1,
-        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "img" : "https://rukminim1.flixcart.com/image/660/792/kmmcrrk0/raincoat/c/d/d/l-r1-jim-dandy-original-imagfgn43spas9sc.jpeg?q=50",
         "brand" : "A Company",
         "description" : "Solod Men Raincoat",
         "price" : 100,
@@ -11,7 +11,7 @@
     },
     {
         "id" : 2,
-        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "img" : "https://rukminim1.flixcart.com/image/660/792/jwmfcsw0/t-shirt/p/f/d/xxl-awt1020ol-aelomart-original-imaf7qdtbzggxbpu.jpeg?q=50",
         "brand" : "B Company",
         "description" : "Solod Men Raincoat",
         "price" : 100,
@@ -21,7 +21,7 @@
     },
     {
         "id" : 3,
-        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "img" : "https://rukminim1.flixcart.com/image/660/792/kfeamq80-0/t-shirt/w/e/8/l-togo-try-this-original-imafvvbgytpenkkg.jpeg?q=50",
         "brand" : "C Company",
         "description" : "Solod Men Raincoat",
         "price" : 100,
@@ -31,7 +31,7 @@
     },
     {
         "id" : 4,
-        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "img" : "https://rukminim1.flixcart.com/image/660/792/ke8uv0w0-0/t-shirt/b/l/a/s-hm-1001-ramagreen-helmont-original-imafuya47wfh9gp5.jpeg?q=50",
         "brand" : "D Company",
         "description" : "Solod Men Raincoat",
         "price" : 100,
@@ -41,7 +41,7 @@
     },
     {
         "id" : 5,
-        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "img" : "https://rukminim1.flixcart.com/image/660/792/jwxuvm80/t-shirt/c/n/g/s-1jgrfdotstpwh-nvy-jugular-original-imafhhajsn6yzg2a.jpeg?q=50",
         "brand" : "E Company",
         "description" : "Solod Men Raincoat",
         "price" : 100,
@@ -51,7 +51,7 @@
     },
     {
         "id" : 6,
-        "img" : ["src\\components\\Product Images\\raincoat 1.jpeg", "src\\components\\Product Images\\raincoat 2.jpeg"],
+        "img" : "https://rukminim1.flixcart.com/image/660/792/j7ksia80/vest/a/5/k/85-venus-wh-rn-5pc-lux-venus-original-imaewph32hnwbqvc.jpeg?q=50",
         "brand" : "F Company",
         "description" : "Solod Men Raincoat",
         "price" : 100,
