@@ -7,56 +7,76 @@
         "price" : 100,
         "sizes" : ["S","M","L"],
         "ideal" : ["Men", "Women"],
-        "rating" : 3
+        "rating" : 3.5
     },
     {
         "id" : 2,
         "img" : "https://rukminim1.flixcart.com/image/660/792/jwmfcsw0/t-shirt/p/f/d/xxl-awt1020ol-aelomart-original-imaf7qdtbzggxbpu.jpeg?q=50",
         "brand" : "B Company",
-        "description" : "Solod Men Raincoat",
+        "description" : "Mens T-shirt",
         "price" : 200,
-        "sizes" : ["S","M","L"],
-        "ideal" : ["Men", "Women"],
-        "rating" : 3
+        "sizes" : ["S","M"],
+        "ideal" : ["Men"],
+        "rating" : 4
     },
     {
         "id" : 3,
         "img" : "https://rukminim1.flixcart.com/image/660/792/kfeamq80-0/t-shirt/w/e/8/l-togo-try-this-original-imafvvbgytpenkkg.jpeg?q=50",
         "brand" : "C Company",
-        "description" : "Solod Men Raincoat",
+        "description" : "Mens T-shirt",
         "price" : 150,
-        "sizes" : ["S","M","L"],
-        "ideal" : ["Men", "Women"],
-        "rating" : 3
+        "sizes" : ["S","M"],
+        "ideal" : ["Men"],
+        "rating" : 4.5
     },
     {
         "id" : 4,
         "img" : "https://rukminim1.flixcart.com/image/660/792/ke8uv0w0-0/t-shirt/b/l/a/s-hm-1001-ramagreen-helmont-original-imafuya47wfh9gp5.jpeg?q=50",
         "brand" : "D Company",
-        "description" : "Solod Men Raincoat",
+        "description" : "Mens T-shirt Full Sleeves",
         "price" : 250,
-        "sizes" : ["S","M","L"],
+        "sizes" : ["M","L"],
         "ideal" : ["Men", "Women"],
-        "rating" : 3
+        "rating" : 3.5
     },
     {
         "id" : 5,
         "img" : "https://rukminim1.flixcart.com/image/660/792/jwxuvm80/t-shirt/c/n/g/s-1jgrfdotstpwh-nvy-jugular-original-imafhhajsn6yzg2a.jpeg?q=50",
-        "brand" : "E Company",
-        "description" : "Solod Men Raincoat",
+        "brand" : "B Company",
+        "description" : "Mens T-shirt Full Sleeves",
         "price" : 350,
-        "sizes" : ["S","M","L"],
-        "ideal" : ["Men", "Women"],
+        "sizes" : ["M"],
+        "ideal" : ["Men"],
         "rating" : 3
     },
     {
         "id" : 6,
         "img" : "https://rukminim1.flixcart.com/image/660/792/j7ksia80/vest/a/5/k/85-venus-wh-rn-5pc-lux-venus-original-imaewph32hnwbqvc.jpeg?q=50",
-        "brand" : "F Company",
-        "description" : "Solod Men Raincoat",
-        "price" : 500,
+        "brand" : "D Company",
+        "description" : "Men's Bandi",
+        "price" : 400,
         "sizes" : ["S","M","L"],
-        "ideal" : ["Men", "Women"],
+        "ideal" : ["Men"],
         "rating" : 3
+    },
+    {
+        "id" : 7,
+        "img" : "https://rukminim1.flixcart.com/image/880/1056/knm2s280/t-shirt/u/l/i/xxs-i-know-html-navy-dudeme-original-imag28xgwjnbxduw.jpeg?q=50",
+        "brand" : "E Company",
+        "description" : "Funky T-shirt Men",
+        "price" : 500,
+        "sizes" : ["M","L"],
+        "ideal" : ["Men"],
+        "rating" : 4
+    },
+    {
+        "id" : 8,
+        "img" : "https://rukminim1.flixcart.com/image/880/1056/kflftzk0/dress/b/u/k/l-102tkr2452-selvia-original-imafwyy8ryysm2zw.jpeg?q=50",
+        "brand" : "B Company",
+        "description" : "Women Dress",
+        "price" : 1500,
+        "sizes" : ["S","M"],
+        "ideal" : ["Women"],
+        "rating" : 4.5
     }
 ]

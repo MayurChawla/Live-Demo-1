@@ -55,7 +55,7 @@ nav .site-name {
 .product {
   width: 300px;
   margin: 1rem;
-  background-color: #2874f0;
+  background-color: lightblue;
   border-radius: 3px;
   box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
   overflow: hidden;
