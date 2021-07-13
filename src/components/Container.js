@@ -3,6 +3,8 @@ import React from 'react';
 const ContainerList = () => {
 
   const [Data, setData] = React.useState(null);
+  let prices = [];
+  let tempdata = [];
   const [sortPriceValue, setPrice] = React.useState("desc");
 
   // Getting Product List from JSON File and showing.
@@ -21,8 +23,15 @@ const ContainerList = () => {
   const priceAscending = () => {
     console.log("ascending price");
     setPrice("asce");
-      console.log(Data);
+    tempdata = Data.map((item)=>item);
     
+    for(let i=0;i<tempdata.length;i++)
+    {
+      prices[i] = tempdata[i].price;
+
+
+      console.log(tempdata[i].id + " : "+ tempdata[i].price);
+    }
     //getDatapriceAsce();
   }
   const priceDescending = () => {
