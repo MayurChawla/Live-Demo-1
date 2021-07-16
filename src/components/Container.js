@@ -1,11 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 const ContainerList = () => {
 
-  const [Data, setData] = React.useState(null);
-  let prices = [];
+  const [Data, setData] = useState(null);
   let tempdata = [];
-  const [sortPriceValue, setPrice] = React.useState("desc");
+  const [size,setSize] = useState([]);
 
   // Getting Product List from JSON File and showing.
   const getData = async () => {
@@ -19,34 +18,48 @@ const ContainerList = () => {
     getData();
   }, []);
 
-
   const priceAscending = () => {
-    console.log("ascending price");
-    setPrice("asce");
     tempdata = Data.map((item)=>item);
-    
-    for(let i=0;i<tempdata.length;i++)
-    {
-      prices[i] = tempdata[i].price;
-
-
-      console.log(tempdata[i].id + " : "+ tempdata[i].price);
-    }
-    //getDatapriceAsce();
+    tempdata.sort(function (a, b) {
+      return a.price - b.price;
+    });
+    setData(tempdata);
   }
   const priceDescending = () => {
-    console.log("descending price");
-    setPrice("desc");
+    tempdata = Data.map((item)=>item);
+    tempdata.sort(function (a, b) {
+      return b.price - a.price;
+    });
+    setData(tempdata);
   }
-
+const sizeCheck = () => {
+  console.log(""+size);
+  getData();
+  tempdata = Data.map((item)=>item);
+    for(let i=0;i<size.length;i++)
+    {
+      tempdata.filter((product)=>product.sizes.includes(size[i])
+    )
+  }
+  console.log(tempdata);
+}
   return (
-    <div className="product-container">
+    <div>
       <div >
         price :
         <button className="sort-by-price-button" onClick={priceAscending}>asce</button>
-        <button className="sort-by-price-button"  onClick={priceDescending}>desc</button>
+        <button className="sort-by-price-button" onClick={priceDescending}>desc</button>
       </div>
-    {
+      <div>
+        Size : 
+        <input name="S" type="checkbox" onClick={(e)=>{if(!size.includes("S")){size.push(e.target.name)} else{size.splice(size.indexOf("S"),1)}}}/>S
+        <input name="M" type="checkbox" onClick={(e)=>{if(!size.includes("M")){size.push(e.target.name)} else{size.splice(size.indexOf("M"),1)}}}/>M
+        <input name="L" type="checkbox" onClick={(e)=>{if(!size.includes("L")){size.push(e.target.name)} else{size.splice(size.indexOf("L"),1)}}}/>L
+        <input name="XL" type="checkbox" onClick={(e)=>{if(!size.includes("XL")){size.push(e.target.name)} else{size.splice(size.indexOf(e.target.name),1)}}}/>XL
+        <button onClick={sizeCheck}>Check Sizes</button>
+      </div>
+      <div className="product-container">
+      {
       Data?.map((item) => (
       <div className="product" key={item.id}>
         <img src={item.img} alt = "imageloading"/>
@@ -62,7 +75,8 @@ const ContainerList = () => {
         </div>
       </div>
       ))
-    }
+      }
+      </div>
     </div>
     );
         
