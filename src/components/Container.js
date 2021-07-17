@@ -1,23 +1,24 @@
 import React,{useState} from 'react';
-
 const ContainerList = () => {
- //Getting data from JSON
- const getData = async () => {
+ 
+const [Data, setData] = useState(null);
+let tempdata = [];
+const [size,setSize] = useState([]);
+const [idealFor,setIdealFor] = useState([]);
+const [brand,setBrand] = useState([]);
+
+//Getting data from JSON
+const getData = async () => {
   await fetch("Data.json")
     .then((res) => res.json())
     .then((data) => {
       setData(data);
     });
 };
+
 React.useEffect(() => {
   getData();
 },[]);
-
-const [Data, setData] = useState(null);
-let tempdata = [];
-const [size,setSize] = useState([]);
-const [idealFor,setIdealFor] = useState([]);
-const [brand,setBrand] = useState([]);
 
 const priceAscending = () => {
   tempdata = Data.map((item)=>item);
@@ -48,32 +49,36 @@ const rateDescending = () => {
   setData(tempdata);
 }
 
-const checkFilters = () => {
-  tempdata = Data.map((item)=>item);
-  if(size.length)
-  {
-    console.log("Sizes : "+size);
-    for(let i=0;i<size.length;i++){
-      tempdata = tempdata.filter((si)=>si.sizes.includes(size[i]));
+React.useEffect(()=>{
+  const checkFilters = () => {
+    tempdata = Data.map((item)=>item);
+    if(size.length)
+    {
+      console.log("Sizes : "+size);
+      for(let i=0;i<size.length;i++){
+        tempdata = tempdata.filter((si)=>si.sizes.includes(size[i]));
+      }
     }
-  }
-  if(idealFor.length)
-  {
-    console.log("For : "+idealFor);
-    for(let i=0;i<idealFor.length;i++){
-      tempdata = tempdata.filter((si)=>si.ideal.includes(idealFor[i]));
+    if(idealFor.length)
+    {
+      console.log("For : "+idealFor);
+      for(let i=0;i<idealFor.length;i++){
+        tempdata = tempdata.filter((si)=>si.ideal.includes(idealFor[i]));
+      }
     }
-  }
-  if(brand.length)
-  {
-    console.log("Brand : "+brand);
-    for(let i=0;i<brand.length;i++){
-      tempdata = tempdata.filter((si)=>si.brand.includes(brand[i]));
+    if(brand.length)
+    {
+      console.log("Brand : "+brand);
+      for(let i=0;i<brand.length;i++){
+        tempdata = tempdata.filter((si)=>si.brand.includes(brand[i]));
+      }
     }
-  }
-  
-  setData(tempdata);
-}
+    setData(tempdata);
+  };
+  checkFilters();
+},[size, idealFor, brand])
+
+
 const resetFilters = () => {
   console.log("Reset Filters");
   setBrand([]);
@@ -91,7 +96,6 @@ const Checking = (e,arr) => {
   {
     arr.splice(arr.indexOf(e.target.name),1);
   }
-  checkFilters();
 }
 
 return(
