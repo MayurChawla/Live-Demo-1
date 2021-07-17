@@ -28,7 +28,20 @@ const ContainerList = () => {
     });
     setData(tempdata);
   }
-
+  const rateAscending = () => {
+    tempdata = Data.map((item)=>item);
+    tempdata.sort(function (a, b) {
+      return a.rating - b.rating;
+    });
+    setData(tempdata);
+  }
+  const rateDescending = () => {
+    tempdata = Data.map((item)=>item);
+    tempdata.sort(function (a, b) {
+      return b.rating - a.rating;
+    });
+    setData(tempdata);
+  }
   const [Data, setData] = useState(null);
   let tempdata = [];
   const [size,setSize] = useState([]);
@@ -36,34 +49,36 @@ const ContainerList = () => {
   const [brand,setBrand] = useState([]);
   
   const checkFilters = () => {
+    tempdata = Data.map((item)=>item);
     if(size.length)
     {
       console.log("Sizes : "+size);
+      for(let i=0;i<size.length;i++){
+        tempdata = tempdata.filter((si)=>si.sizes.includes(size[i]));
+      }
     }
     if(idealFor.length)
     {
       console.log("For : "+idealFor);
+      for(let i=0;i<idealFor.length;i++){
+        tempdata = tempdata.filter((si)=>si.ideal.includes(idealFor[i]));
+      }
     }
     if(brand.length)
     {
       console.log("Brand : "+brand);
+      for(let i=0;i<brand.length;i++){
+        tempdata = tempdata.filter((si)=>si.brand.includes(brand[i]));
+      }
     }
-    
-    //getData();
-    // tempdata = Data.map((item)=>item);
-    //   for(let i=0;i<size.length;i++)
-    //   {
-    //     tempdata.filter((product)=>product.sizes.includes(size[i])
-    //   )
-    // }
-    // console.log(tempdata);
+    setData(tempdata);
   }
   const resetFilters = () => {
     console.log("Reset Filters");
-
     setBrand([]);
     setIdealFor([]);
     setSize([]);
+    window.location.reload();
   }
 
   const Checking = (e,arr) => {
@@ -84,8 +99,8 @@ const ContainerList = () => {
       <div className="filters">
       <div className="filters">
         price :
-        <button className="sort-by-price-button" onClick={priceAscending}>asce</button>
-        <button className="sort-by-price-button" onClick={priceDescending}>desc</button>
+        <button className="sort-by-price-button" onClick={priceAscending}>Ascending</button>
+        <button className="sort-by-price-button" onClick={priceDescending}>Descending</button>
       </div>
       <div className="filters">
         Size : 
@@ -123,6 +138,11 @@ const ContainerList = () => {
                                             (e)=>Checking(e,brand)
                                           }/>D Company
         <input name="E Company" type="checkbox" onClick={(e)=>Checking(e,brand)}/>E Company
+      </div>
+      <div className="filters">
+        <strong>Rating</strong>
+        <button onClick={rateAscending}>Ascending</button>
+        <button onClick={rateDescending}>Descending</button>
       </div>
       <div className="filters">
         <button onClick={checkFilters}>Filter</button>
