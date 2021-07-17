@@ -1,4 +1,7 @@
 import React,{useState} from 'react';
+
+//Working code with uncheck feature.
+
 const ContainerList = () => {
  
 const [Data, setData] = useState(null);
@@ -52,7 +55,6 @@ const rateDescending = () => {
 }
 
 const Checking = (e,arr) => {
-  //console.log(e.target.name + " " + e.target.checked);
   if(e.target.checked)
   {
     arr.push(e.target.name);
@@ -174,5 +176,4 @@ Data?.map((item) => (
 </div>
 );        
 }
-
 export default ContainerList;
