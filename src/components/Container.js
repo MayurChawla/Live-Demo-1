@@ -90,7 +90,6 @@ const filterData = () => {
     }
   }
   setData(tempdata);
-  //console.log(copydata);
 }
 const resetFilters = () => {
   console.log("Reset Filters");
