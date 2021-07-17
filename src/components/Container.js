@@ -2,10 +2,6 @@ import React,{useState} from 'react';
 
 const ContainerList = () => {
 
-  const [Data, setData] = useState(null);
-  let tempdata = [];
-  const [size,setSize] = useState([]);
-
   // Getting Product List from JSON File and showing.
   const getData = async () => {
     await fetch("Data.json")
@@ -32,31 +28,106 @@ const ContainerList = () => {
     });
     setData(tempdata);
   }
-const sizeCheck = () => {
-  console.log(""+size);
-  getData();
-  tempdata = Data.map((item)=>item);
-    for(let i=0;i<size.length;i++)
+
+  const [Data, setData] = useState(null);
+  let tempdata = [];
+  const [size,setSize] = useState([]);
+  const [idealFor,setIdealFor] = useState([]);
+  const [brand,setBrand] = useState([]);
+  
+  const checkFilters = () => {
+    if(size.length)
     {
-      tempdata.filter((product)=>product.sizes.includes(size[i])
-    )
+      console.log("Sizes : "+size);
+    }
+    if(idealFor.length)
+    {
+      console.log("For : "+idealFor);
+    }
+    if(brand.length)
+    {
+      console.log("Brand : "+brand);
+    }
+    
+    //getData();
+    // tempdata = Data.map((item)=>item);
+    //   for(let i=0;i<size.length;i++)
+    //   {
+    //     tempdata.filter((product)=>product.sizes.includes(size[i])
+    //   )
+    // }
+    // console.log(tempdata);
   }
-  console.log(tempdata);
-}
+  const resetFilters = () => {
+    console.log("Reset Filters");
+
+    setBrand([]);
+    setIdealFor([]);
+    setSize([]);
+  }
+
+  const Checking = (e,arr) => {
+    console.log(e.target.name + " " + e.target.checked);
+    if(e.target.checked)
+    {
+      arr.push(e.target.name);
+    }
+    else if(!e.target.checked)
+    {
+      let location = arr.indexOf(e.target.name);
+      arr.splice(location,1);
+    }
+  }
+
   return (
     <div>
-      <div >
+      <div className="filters">
+      <div className="filters">
         price :
         <button className="sort-by-price-button" onClick={priceAscending}>asce</button>
         <button className="sort-by-price-button" onClick={priceDescending}>desc</button>
       </div>
-      <div>
+      <div className="filters">
         Size : 
-        <input name="S" type="checkbox" onClick={(e)=>{if(!size.includes("S")){size.push(e.target.name)} else{size.splice(size.indexOf("S"),1)}}}/>S
-        <input name="M" type="checkbox" onClick={(e)=>{if(!size.includes("M")){size.push(e.target.name)} else{size.splice(size.indexOf("M"),1)}}}/>M
-        <input name="L" type="checkbox" onClick={(e)=>{if(!size.includes("L")){size.push(e.target.name)} else{size.splice(size.indexOf("L"),1)}}}/>L
-        <input name="XL" type="checkbox" onClick={(e)=>{if(!size.includes("XL")){size.push(e.target.name)} else{size.splice(size.indexOf(e.target.name),1)}}}/>XL
-        <button onClick={sizeCheck}>Check Sizes</button>
+        <input name="S" type="checkbox" onClick={
+                                            (e)=>Checking(e,size)
+                                          }/>S
+        <input name="M" type="checkbox" onClick={(e)=>Checking(e,size)}/>M
+        <input name="L" type="checkbox" onClick={(e)=>Checking(e,size)}/>L
+        <input name="XL" type="checkbox" onClick={(e)=>Checking(e,size)}/>XL
+      </div>
+      <div className="filters">
+        Ideal For :
+        <input name="Men" type="checkbox" onClick={
+                                            (e)=>Checking(e,idealFor)
+                                          }/>Men
+        <input name="Women" type="checkbox" onClick={
+                                            (e)=>Checking(e,idealFor)
+                                          }/>Women
+        <input name="Child" type="checkbox" onClick={
+                                            (e)=>Checking(e,idealFor)
+                                          }/>Child
+      </div>
+      <div className="filters">
+        Brand :
+        <input name="A Company" type="checkbox" onClick={
+                                            (e)=>Checking(e,brand)
+                                          }/>A Company
+        <input name="B Company" type="checkbox" onClick={
+                                            (e)=>Checking(e,brand)
+                                          }/>B Company
+        <input name="C Company" type="checkbox" onClick={
+                                            (e)=>Checking(e,brand)
+                                          }/>C Company
+        <input name="D Company" type="checkbox" onClick={
+                                            (e)=>Checking(e,brand)
+                                          }/>D Company
+        <input name="E Company" type="checkbox" onClick={(e)=>Checking(e,brand)}/>E Company
+      </div>
+      <div className="filters">
+        <button onClick={checkFilters}>Filter</button>
+        <button onClick={resetFilters}>Reset Filters</button>
+      </div>
       </div>
       <div className="product-container">
       {

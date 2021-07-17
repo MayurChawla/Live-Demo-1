@@ -46,7 +46,11 @@ nav .site-name {
 .searchbar::placeholder {
   color: lightslategray;
 }
-
+.filters {
+  display: block;
+  margin: auto;
+  max-width: 60%;
+}
 .product-container {
   display: flex;
   justify-content: center;
