@@ -9,7 +9,7 @@ const [copydata,setCopyData] = useState(null);
 let tempdata = [];
 const [size,setSize] = useState([]);
 const [idealFor,setIdealFor] = useState([]);
-const [brand,setBrand] = useState([]);
+const [brandarr,setBrand] = useState([]);
 
 //Getting data from JSON
 const getData = async () => {
@@ -84,11 +84,12 @@ const filterData = () => {
       tempdata = tempdata.filter((si)=>si.ideal.includes(idealFor[i]));
     }
   }
-  if(brand.length)
+  if(brandarr.length)
   {
-    console.log("Brand : "+brand);
-    for(let i=0;i<brand.length;i++){
-      tempdata = tempdata.filter((si)=>si.brand.includes(brand[i]));
+    console.log(brandarr);
+
+    for(let i=0;i<brandarr.length;i++){
+      tempdata = tempdata.filter((si)=>si.brand.includes(brandarr[i]));
     }
   }
   setData(tempdata);
@@ -132,18 +133,18 @@ return(
 <div className="filters">
   Brand :
   <input name="A Company" type="checkbox" onClick={
-                                      (e)=>Checking(e,brand)
+                                      (e)=>Checking(e,brandarr)
                                     }/>A Company
   <input name="B Company" type="checkbox" onClick={
-                                      (e)=>Checking(e,brand)
+                                      (e)=>Checking(e,brandarr)
                                     }/>B Company
   <input name="C Company" type="checkbox" onClick={
-                                      (e)=>Checking(e,brand)
+                                      (e)=>Checking(e,brandarr)
                                     }/>C Company
   <input name="D Company" type="checkbox" onClick={
-                                      (e)=>Checking(e,brand)
+                                      (e)=>Checking(e,brandarr)
                                     }/>D Company
-  <input name="E Company" type="checkbox" onClick={(e)=>Checking(e,brand)}/>E Company
+  <input name="E Company" type="checkbox" onClick={(e)=>Checking(e,brandarr)}/>E Company
 </div>
 <div className="filters">
   <strong>Rating : </strong>
